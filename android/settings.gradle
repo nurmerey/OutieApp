@@ -1,0 +1,3 @@
+rootProject.name = 'OutieApp'
+
+include ':app'
