@@ -26,7 +26,7 @@ export default class Weather extends Component {
                 <View style={styles.weatherBoxLeft}>
                     <Image
                         style={{width: 90, height: 90}}
-                        source={require('./noun_1592727_cc.png')}
+                        source={require('../assets/icons/partlysunny.png')}
                     />
                 </View>
                 <View style={styles.weatherBoxRight}>
