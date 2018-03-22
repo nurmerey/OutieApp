@@ -7,9 +7,11 @@ https://facebook.github.io/react-native/docs/getting-started.html
 todo: download Xcode
 
 IN YOUR TERMINAL:
-brew install node
+```
+brew install node 
 brew install watchman
 npm install -g react-native-cli
 
 cd your-root-to/OutieApp
 react-native run-ios
+```
