@@ -4,7 +4,9 @@ import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  FlatList,
+  Alert
 } from 'react-native';
 
 export default class Feed extends Component {
@@ -22,12 +24,19 @@ export default class Feed extends Component {
   }
   render() {
     return (
-        <View style={styles.feed}>
-          <Button
-            onPress={this._onPressButton}
-            title="Add your first selfie"
-          />
-        </View>
+        <FlatList style={styles.feed}
+            data={[
+                {
+                    key: 'a',
+                    rating: "5"
+                }, 
+                {
+                    key: 'b',
+                    rating: "5"
+                }
+            ]}
+            renderItem={({item}) => <Text>{item.key}, {item.rating}</Text>}
+        />
     );
   }
 }
