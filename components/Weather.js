@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 export default class Weather extends Component {
@@ -21,9 +22,21 @@ export default class Weather extends Component {
   render() {
     return (
         <View style={styles.weather}>
-            <Text style={styles.weatherTemp}>76</Text>
+            <View style={styles.weatherBox}>
+                <View style={styles.weatherBoxLeft}>
+                    <Image
+                        style={{width: 90, height: 90}}
+                        source={require('./noun_1592727_cc.png')}
+                    />
+                </View>
+                <View style={styles.weatherBoxRight}>
+                    <Text style={styles.weatherTemp}>76°</Text>
+                    <Text style={styles.dailyHighLow}>48° | 33°</Text>
+                </View>
+            </View>
+
             <View style={styles.weatherChart}>
-            <Text style={styles.weatherChartText}>weather chart goes here</Text>
+                <Text style={styles.weatherChartText}>weather chart goes here</Text>
             </View>
         </View>
 
@@ -32,26 +45,42 @@ export default class Weather extends Component {
 }
 
 const styles = StyleSheet.create({
-
-  weather: {
+  weather:{
     flex: 3,
-    backgroundColor: 'purple',
-    alignItems:'center',
+    backgroundColor: '#82aeb7',
+    // alignItems:'center',
     justifyContent: 'space-between',
     paddingTop:50
   },
+  weatherBox:{
+    flex: 1,
+    flexDirection: 'row'
+  },
+  weatherBoxLeft:{
+    flex: 1,
+    alignItems: 'flex-end'
+  },
+  weatherBoxRight:{
+    flex: 1
+  },
   weatherTemp:{
-    flex:3,
-    fontSize:100,
-    justifyContent: 'center',
-    alignItems:'center'
+    fontSize:55,
+    marginBottom: -5
+  },
+  weatherHighLow:{
+    fontSize: 22
   },
   weatherChart:{
     flex:1,
     width:'100%',
-    backgroundColor:'blue',
+    backgroundColor:'#c3dde2',
     justifyContent: 'center',
-    alignItems:'center'
+    alignItems:'center',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.8,
+    shadowRadius: 4,
+    elevation: 1  
   },
   weatherChartText:{
 
