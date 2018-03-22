@@ -14,6 +14,7 @@ import {
   Alert
 } from 'react-native';
 
+
 type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
@@ -36,12 +37,7 @@ export default class App extends Component<Props> {
           <Text style={styles.dateText}>Thursday, 14th March</Text>
           <Text style={styles.welcome}>Welcome Rey!</Text>
         </View>
-        <View style={styles.weather}>
-          <Text style={styles.weatherTemp}>76</Text>
-          <View style={styles.weatherChart}>
-            <Text style={styles.weatherChartText}>weather chart goes here</Text>
-          </View>
-        </View>
+        <Weather />
         <View style={styles.feed}>
           <Button
             onPress={this._onPressButton}
@@ -69,29 +65,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'left',
     margin: 10
-  },
-  weather: {
-    flex: 3,
-    backgroundColor: 'purple',
-    alignItems:'center',
-    justifyContent: 'space-between',
-    paddingTop:50
-  },
-  weatherTemp:{
-    flex:3,
-    fontSize:100,
-    justifyContent: 'center',
-    alignItems:'center'
-  },
-  weatherChart:{
-    flex:1,
-    width:'100%',
-    backgroundColor:'blue',
-    justifyContent: 'center',
-    alignItems:'center'
-  },
-  weatherChartText:{
-
   },
   feed:{
     flex:3,
