@@ -28,14 +28,12 @@ export default class Feed extends Component {
             title="Add your first selfie"
           />
         </View>
-
     );
   }
 }
-
 const styles = StyleSheet.create({
     feed:{
         flex:3,
-        backgroundColor:'white'
+        backgroundColor:'yellow'
       }
 });
