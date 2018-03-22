@@ -14,6 +14,7 @@ import {
   Alert
 } from 'react-native';
 
+import Weather from './components/Weather'
 
 type Props = {};
 export default class App extends Component<Props> {
