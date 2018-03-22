@@ -36,6 +36,6 @@ export default class Feed extends Component {
 const styles = StyleSheet.create({
     feed:{
         flex:3,
-        backgroundColor:'yellow'
+        backgroundColor:'white'
       }
 });
