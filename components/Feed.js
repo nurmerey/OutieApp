@@ -8,6 +8,7 @@ import {
   FlatList,
   Alert
 } from 'react-native';
+import FeedItem from './FeedItem';
 
 export default class Feed extends Component {
   constructor(props) {
@@ -27,15 +28,15 @@ export default class Feed extends Component {
         <FlatList style={styles.feed}
             data={[
                 {
-                    key: 'a',
+                    key: 'Feed Item A',
                     rating: "5"
-                }, 
+                },
                 {
-                    key: 'b',
+                    key: 'Feed Item B',
                     rating: "5"
                 }
             ]}
-            renderItem={({item}) => <Text>{item.key}, {item.rating}</Text>}
+            renderItem={({item}) => <FeedItem item={item}></FeedItem>}
         />
     );
   }
