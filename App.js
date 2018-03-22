@@ -14,21 +14,14 @@ import {
   Alert
 } from 'react-native';
 
-import Weather from './components/Weather'
+import Weather from './components/Weather';
+import Feed from './components/Feed';
 
 type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
     super(props)
     //example binding function
-    this._onPressButton = this._onPressButton.bind(this)
-  }
-  _myTestFunc() {
-    console.log('testing custom function call')
-  }
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-    this._myTestFunc()
   }
 
   render() {
@@ -39,12 +32,7 @@ export default class App extends Component<Props> {
           <Text style={styles.welcome}>Welcome Rey!</Text>
         </View>
         <Weather />
-        <View style={styles.feed}>
-          <Button
-            onPress={this._onPressButton}
-            title="Add your first selfie"
-          />
-        </View>
+       <Feed />
       </View>
     );
   }
@@ -67,8 +55,5 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     margin: 10
   },
-  feed:{
-    flex:3,
-    backgroundColor:'yellow'
-  }
+ 
 });
