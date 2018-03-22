@@ -13,6 +13,8 @@ import {
   Image
 } from 'react-native';
 
+import Chart from './Chart'
+
 export default class Weather extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +28,7 @@ export default class Weather extends Component {
                 <View style={styles.weatherBoxLeft}>
                     <Image
                         style={{width: 90, height: 90}}
-                        source={require('./noun_1592727_cc.png')}
+                        source={require('../assets/icons/partlysunny.png')}
                     />
                 </View>
                 <View style={styles.weatherBoxRight}>
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     paddingTop:50
   },
   weatherBox:{
-    flex: 1,
+    flex: 0.5,
     flexDirection: 'row'
   },
   weatherBoxLeft:{
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     fontSize: 22
   },
   weatherChart:{
-    flex:1,
+    flex:0.75,
     width:'100%',
     backgroundColor:'#c3dde2',
     justifyContent: 'center',
@@ -81,9 +83,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 4,
     elevation: 1  
-  },
-  weatherChartText:{
-
   }
 });
 
