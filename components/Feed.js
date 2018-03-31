@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Platform,
   StyleSheet,
@@ -7,43 +7,45 @@ import {
   Button,
   FlatList,
   Alert
-} from 'react-native';
-import FeedItem from './FeedItem';
+} from "react-native";
+import FeedItem from "./FeedItem";
 
 export default class Feed extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     //example binding function
-    this._onPressButton = this._onPressButton.bind(this)
+    this._onPressButton = this._onPressButton.bind(this);
   }
   _myTestFunc() {
-    console.log('testing custom function call')
+    console.log("testing custom function call");
   }
   _onPressButton() {
-    Alert.alert('You tapped the button!')
-    this._myTestFunc()
+    Alert.alert("You tapped the button!");
+    this._myTestFunc();
   }
   render() {
     return (
-        <FlatList style={styles.feed}
-            data={[
-                {
-                    key: 'Feed Item A',
-                    rating: "5"
-                },
-                {
-                    key: 'Feed Item B',
-                    rating: "5"
-                }
-            ]}
-            renderItem={({item}) => <FeedItem item={item}></FeedItem>}
+      <View style={styles.feed}>
+        <FlatList
+          data={[
+            {
+              key: "Feed Item A",
+              rating: "5"
+            },
+            {
+              key: "Feed Item B",
+              rating: "5"
+            }
+          ]}
+          renderItem={({ item }) => <FeedItem item={item} />}
         />
+      </View>
     );
   }
 }
 const styles = StyleSheet.create({
-    feed:{
-        flex:3,
-        backgroundColor:'yellow'
-      }
+  feed: {
+    flex: 3,
+    backgroundColor: "pink"
+  }
 });
