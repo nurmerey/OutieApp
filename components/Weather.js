@@ -7,6 +7,8 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Image } from "react-native";
 
+import Chart from './Chart'
+
 export default class Weather extends Component {
   constructor(props) {
     super(props);
