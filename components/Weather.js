@@ -7,7 +7,7 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Image } from "react-native";
 
-import Chart from './Chart'
+import Chart from "./Chart";
 
 export default class Weather extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class Weather extends Component {
           <View style={styles.weatherBoxLeft}>
             <Image
               style={{ width: 90, height: 90 }}
-              source={require("./noun_1592727_cc.png")}
+              source={require("../assets/icons/partlysunny.png")}
             />
           </View>
           <View style={styles.weatherBoxRight}>
