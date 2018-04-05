@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 
 export default class TopNav extends Component {
-  render() {
 
-    const { navigate } = this.props.navigation;
+  render() {
 
     return (
       <View style={styles.topNav}>
@@ -21,8 +20,6 @@ export default class TopNav extends Component {
           <Image 
               style={{ width: 30, height: 30 }}
               source={require("../assets/icons/settings.png")} />
-
-           <Button title="Click" onPress={() => navigate('Camera')} />
         </View>
       </View>
     );
