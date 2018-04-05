@@ -1,25 +1,35 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 export default class TopNav extends Component {
 
-  render() {
+  constructor(props){
+    super(props)
+  }
 
+  render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.topNav}>
         <View style={styles.left}>
-          <Image 
-            style={{ width: 30, height: 25 }}
-            source={require("../assets/icons/camera.png")} />
+          <TouchableOpacity onPress={() => navigate('Camera')}>
+            <Image 
+              style={{ width: 30, height: 25 }}
+              source={require("../assets/icons/camera.png")}
+            />
+            </TouchableOpacity>
         </View>
         <View style={styles.middle}>
           <Text style={styles.dateText}>Thursday, 14th March</Text>
           <Text style={styles.welcome}>Welcome Rey!</Text>
         </View>
         <View style={styles.right}>
-          <Image 
-              style={{ width: 30, height: 30 }}
-              source={require("../assets/icons/settings.png")} />
+          <TouchableOpacity onPress={() => navigate('Settings')}>
+            <Image 
+                style={{ width: 30, height: 30 }}
+                source={require("../assets/icons/settings.png")}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     );
