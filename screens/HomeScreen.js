@@ -22,12 +22,6 @@ export default class HomeScreen extends Component<Props> {
   }
 }
 
-HomeScreen.navigationOptions = {
-    header: (
-        <TopNav />
-    )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1

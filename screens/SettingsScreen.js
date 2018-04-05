@@ -19,12 +19,6 @@ export default class SettingsScreen extends Component<Props> {
   }
 }
 
-SettingsScreen.navigationOptions = {
-    header: (
-        <TopNav />
-    )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1
