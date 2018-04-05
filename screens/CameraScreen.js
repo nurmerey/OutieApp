@@ -19,12 +19,6 @@ export default class CameraScreen extends Component<Props> {
   }
 }
 
-CameraScreen.navigationOptions = {
-    header: (
-        <TopNav />
-    )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1
