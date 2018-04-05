@@ -1,36 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Button, Alert } from "react-native";
+import { StackNavigator } from 'react-navigation';
+import HomeScreen from './screens/HomeScreen';
+import CameraScreen from './screens/CameraScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
-import Weather from "./components/Weather";
-import Feed from "./components/Feed";
-import TopNav from "./components/TopNav";
+const App = StackNavigator({
+  Home: { screen: HomeScreen },
+  Camera: { screen: CameraScreen },
+  Settings: { screen: SettingsScreen }
+})
 
-type Props = {};
-export default class App extends Component<Props> {
-  constructor(props) {
-    super(props);
-    //example binding function
-  }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <TopNav />
-        <Weather />
-        <Feed />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
+export default App
