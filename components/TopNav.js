@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     paddingTop: 30
   },
   welcome: {
     fontSize: 20,
     textAlign: "left",
     margin: 10,
-    marginTop: 20
+    marginTop: 5
   }
 });
