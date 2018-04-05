@@ -19,7 +19,7 @@ export default class SettingsScreen extends Component<Props> {
   }
 }
 
-HomeScreen.navigationOptions = {
+SettingsScreen.navigationOptions = {
     header: (
         <TopNav />
     )

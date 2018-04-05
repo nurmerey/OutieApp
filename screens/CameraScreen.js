@@ -19,7 +19,7 @@ export default class CameraScreen extends Component<Props> {
   }
 }
 
-HomeScreen.navigationOptions = {
+CameraScreen.navigationOptions = {
     header: (
         <TopNav />
     )
