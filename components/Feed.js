@@ -31,19 +31,20 @@ export default class Feed extends Component {
           data={[
             {
               key: "Feed Item A",
+              timestamp: 1523226512,
               rating: "5",
+              weatherTemp: 20,
               img: "https://pbs.twimg.com/media/DZEwH5qXUAAdqZF.jpg"
             },
             {
               key: "Feed Item B",
+              timestamp: 1523226545,
               rating: "5",
+              weatherTemp: 40,
               img: "https://pbs.twimg.com/media/DZEwH5qXUAAdqZF.jpg"
-
             }
           ]}
-          renderItem={({ item }) => 
-          <FeedItem item={item} />
-          }
+          renderItem={({ item }) => <FeedItem item={item} />}
         />
       </View>
     );
@@ -52,7 +53,6 @@ export default class Feed extends Component {
 const styles = StyleSheet.create({
   feed: {
     flex: 3,
-    backgroundColor: "yellow",
-  },
-
+    backgroundColor: "yellow"
+  }
 });
