@@ -6,7 +6,8 @@ import {
   View,
   Button,
   FlatList,
-  Alert
+  Alert,
+  Image
 } from "react-native";
 import FeedItem from "./FeedItem";
 
@@ -30,14 +31,19 @@ export default class Feed extends Component {
           data={[
             {
               key: "Feed Item A",
-              rating: "5"
+              rating: "5",
+              img: "https://pbs.twimg.com/media/DZEwH5qXUAAdqZF.jpg"
             },
             {
               key: "Feed Item B",
-              rating: "5"
+              rating: "5",
+              img: "https://pbs.twimg.com/media/DZEwH5qXUAAdqZF.jpg"
+
             }
           ]}
-          renderItem={({ item }) => <FeedItem item={item} />}
+          renderItem={({ item }) => 
+          <FeedItem item={item} />
+          }
         />
       </View>
     );
@@ -46,6 +52,7 @@ export default class Feed extends Component {
 const styles = StyleSheet.create({
   feed: {
     flex: 3,
-    backgroundColor: "yellow"
-  }
+    backgroundColor: "yellow",
+  },
+
 });
