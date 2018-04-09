@@ -34,14 +34,14 @@ export default class Feed extends Component {
               timestamp: 1523226512,
               rating: "5",
               weatherTemp: 20,
-              img: "https://pbs.twimg.com/media/DZEwH5qXUAAdqZF.jpg"
+              img: "https://tinyurl.com/y9asfh7d"
             },
             {
               key: "Feed Item B",
               timestamp: 1523226545,
               rating: "5",
               weatherTemp: 40,
-              img: "https://pbs.twimg.com/media/DZEwH5qXUAAdqZF.jpg"
+              img: "https://tinyurl.com/y9asfh7d"
             }
           ]}
           renderItem={({ item }) => <FeedItem item={item} />}
@@ -52,7 +52,6 @@ export default class Feed extends Component {
 }
 const styles = StyleSheet.create({
   feed: {
-    flex: 3,
-    backgroundColor: "yellow"
+    flex: 3
   }
 });
