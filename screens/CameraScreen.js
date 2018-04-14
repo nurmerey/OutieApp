@@ -35,8 +35,8 @@ class CameraScreen extends Component<Props> {
             this.camera = ref;
           }}
           style={styles.preview}
-          type={RNCamera.Constants.Type.back}
-          flashMode={RNCamera.Constants.FlashMode.on}
+          type={RNCamera.Constants.Type.front}
+          flashMode={RNCamera.Constants.FlashMode.off}
           permissionDialogTitle={"Permission to use camera"}
           permissionDialogMessage={
             "We need your permission to use your camera phone"
@@ -60,7 +60,6 @@ class CameraScreen extends Component<Props> {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      console.warn("MY PHOTO", data.uri);
       this.setState({ placeholderImg: data.uri });
       this.props.addSelfie({ uri: data.uri });
     }
