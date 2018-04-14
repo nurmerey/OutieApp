@@ -11,7 +11,9 @@ import {
 } from "react-native";
 import FeedItem from "./FeedItem";
 
-export default class Feed extends Component {
+import { connect } from "react-redux";
+
+class Feed extends Component {
   constructor(props) {
     super(props);
     //example binding function
@@ -55,3 +57,9 @@ const styles = StyleSheet.create({
     flex: 3
   }
 });
+
+const mapStateToProps = state => {
+  return { selfies: state };
+};
+
+export default connect(mapStateToProps, {})(Feed);
