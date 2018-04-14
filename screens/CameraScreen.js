@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addSelfie } from "../redux/selfieActions";
+
 import {
   Platform,
   StyleSheet,
@@ -14,11 +17,13 @@ import { RNCamera } from "react-native-camera";
 import TopNav from "../components/TopNav";
 
 type Props = {};
-export default class CameraScreen extends Component<Props> {
+class CameraScreen extends Component<Props> {
   constructor(props) {
     super(props);
     //example binding function
   }
+
+  addSelfie = () => {};
 
   render() {
     return (
@@ -79,3 +84,5 @@ const styles = StyleSheet.create({
     margin: 20
   }
 });
+
+export default connect(null, { addSelfie })(CameraScreen);
