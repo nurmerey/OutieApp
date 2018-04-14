@@ -30,10 +30,6 @@ class CameraScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.myImg}>{this.state.placeholderImg}</Text>
-        <Image
-          style={styles.myImgBG}
-          source={{ uri: this.state.placeholderImg }}
-        />
         <RNCamera
           ref={ref => {
             this.camera = ref;
@@ -93,11 +89,6 @@ const styles = StyleSheet.create({
   },
   myImg: {
     color: "white"
-  },
-  myImgBG: {
-    backgroundColor: "white",
-    borderWidth: 2,
-    borderColor: "white"
   }
 });
 
