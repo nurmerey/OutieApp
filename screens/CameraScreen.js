@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addSelfie } from "../redux/selfieActions";
-
 import {
   Platform,
   StyleSheet,
@@ -16,14 +13,15 @@ import { RNCamera } from "react-native-camera";
 
 import TopNav from "../components/TopNav";
 
+import { connect } from "react-redux";
+import { addSelfie } from "../redux/selfieActions";
+
 type Props = {};
 class CameraScreen extends Component<Props> {
   constructor(props) {
     super(props);
     //example binding function
   }
-
-  addSelfie = () => {};
 
   render() {
     return (
@@ -59,6 +57,7 @@ class CameraScreen extends Component<Props> {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
       console.warn("MY PHOTO", data.uri);
+      this.props.addSelfie({ uri: data.uri });
     }
   };
 }
