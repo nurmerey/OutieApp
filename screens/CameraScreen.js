@@ -6,7 +6,8 @@ import {
   View,
   Button,
   Alert,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from "react-native";
 
 import { RNCamera } from "react-native-camera";
@@ -17,15 +18,22 @@ import { connect } from "react-redux";
 import { addSelfie } from "../redux/selfieActions";
 
 type Props = {};
+placeholderImg = "../assets/icons/love_smiley.png";
 class CameraScreen extends Component<Props> {
   constructor(props) {
     super(props);
     //example binding function
+    this.state = { placeholderImg: placeholderImg };
   }
 
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.myImg}>{this.state.placeholderImg}</Text>
+        <Image
+          style={styles.myImgBG}
+          source={{ uri: this.state.placeholderImg }}
+        />
         <RNCamera
           ref={ref => {
             this.camera = ref;
@@ -57,6 +65,7 @@ class CameraScreen extends Component<Props> {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
       console.warn("MY PHOTO", data.uri);
+      this.setState({ placeholderImg: data.uri });
       this.props.addSelfie({ uri: data.uri });
     }
   };
@@ -81,6 +90,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     alignSelf: "center",
     margin: 20
+  },
+  myImg: {
+    color: "white"
+  },
+  myImgBG: {
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderColor: "white"
   }
 });
 
