@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 export default class TopNav extends Component {
-
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -12,22 +11,22 @@ export default class TopNav extends Component {
     return (
       <View style={styles.topNav}>
         <View style={styles.left}>
-          <TouchableOpacity onPress={() => navigate('Camera')}>
-            <Image 
+          <TouchableOpacity onPress={() => navigate("Camera")}>
+            <Image
               style={{ width: 30, height: 25 }}
               source={require("../assets/icons/camera.png")}
             />
-            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
         <View style={styles.middle}>
-          <Text style={styles.dateText}>Thursday, 14th March</Text>
-          <Text style={styles.welcome}>Welcome Rey!</Text>
+          <Text style={styles.dateText}>Saturday, 14th of April</Text>
+          <Text style={styles.welcome}>Welcome Sunshine!</Text>
         </View>
         <View style={styles.right}>
-          <TouchableOpacity onPress={() => navigate('Settings')}>
-            <Image 
-                style={{ width: 30, height: 30 }}
-                source={require("../assets/icons/settings.png")}
+          <TouchableOpacity onPress={() => navigate("Settings")}>
+            <Image
+              style={{ width: 30, height: 30 }}
+              source={require("../assets/icons/settings.png")}
             />
           </TouchableOpacity>
         </View>
@@ -52,8 +51,11 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
-    textAlign: "left",
+    textAlign: "center",
     margin: 10,
     marginTop: 5
+  },
+  dateText: {
+    textAlign: "center"
   }
 });

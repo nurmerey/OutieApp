@@ -21,18 +21,18 @@ export default class Weather extends Component {
           <View style={styles.weatherBoxLeft}>
             <Image
               style={{ width: 90, height: 90 }}
-              source={require("../assets/icons/partlysunny.png")}
+              source={require("../assets/icons/raincloud.png")}
             />
           </View>
           <View style={styles.weatherBoxRight}>
-            <Text style={styles.weatherTemp}>76°</Text>
-            <Text style={styles.dailyHighLow}>48° | 33°</Text>
+            <Text style={styles.weatherTemp}>50° </Text>
+            <Text style={styles.dailyHighLow}>H 51° | L 42°</Text>
           </View>
         </View>
 
-        <View style={styles.weatherChart}>
+        {/*<View style={styles.weatherChart}>
           <Text style={styles.weatherChartText}>weather chart goes here</Text>
-        </View>
+    </View>*/}
       </View>
     );
   }
@@ -40,8 +40,8 @@ export default class Weather extends Component {
 
 const styles = StyleSheet.create({
   weather: {
-    flex: 2,
-    backgroundColor: "#82aeb7",
+    flex: 1,
+    backgroundColor: "white",
     // alignItems:'center',
     justifyContent: "space-between",
     paddingTop: 50
@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-end"
   },
   weatherBoxRight: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 10
   },
   weatherTemp: {
     fontSize: 55,
