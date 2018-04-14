@@ -27,25 +27,23 @@ class Feed extends Component {
     this._myTestFunc();
   }
   render() {
+    const feedItemTemplate = {
+      key: "Feed Item A",
+      timestamp: 1523226512,
+      rating: "5",
+      weatherTemp: 20,
+      img: "https://tinyurl.com/y9asfh7d"
+    };
+    let feedItemData = [];
+    this.props.selfies.forEach(element => {
+      feedItemTemplate.img = element.uri;
+      console.warn(feedItemTemplate);
+      feedItemData.push(feedItemTemplate);
+    });
     return (
       <View style={styles.feed}>
         <FlatList
-          data={[
-            {
-              key: "Feed Item A",
-              timestamp: 1523226512,
-              rating: "5",
-              weatherTemp: 20,
-              img: "https://tinyurl.com/y9asfh7d"
-            },
-            {
-              key: "Feed Item B",
-              timestamp: 1523226545,
-              rating: "5",
-              weatherTemp: 40,
-              img: "https://tinyurl.com/y9asfh7d"
-            }
-          ]}
+          data={feedItemData}
           renderItem={({ item }) => <FeedItem item={item} />}
         />
       </View>
