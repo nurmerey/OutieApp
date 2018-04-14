@@ -29,7 +29,6 @@ class CameraScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.myImg}>{this.state.placeholderImg}</Text>
         <RNCamera
           ref={ref => {
             this.camera = ref;
@@ -62,6 +61,7 @@ class CameraScreen extends Component<Props> {
       const data = await this.camera.takePictureAsync(options);
       this.setState({ placeholderImg: data.uri });
       this.props.addSelfie({ uri: data.uri });
+      this.props.navigation.goBack();
     }
   };
 }
