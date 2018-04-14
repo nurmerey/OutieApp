@@ -27,23 +27,35 @@ class Feed extends Component {
     this._myTestFunc();
   }
   render() {
-    const feedItemTemplate = {
-      key: "Feed Item A",
-      timestamp: 1523226512,
-      rating: "5",
-      weatherTemp: 20,
-      img: "https://tinyurl.com/y9asfh7d"
-    };
-    let feedItemData = [];
-    this.props.selfies.forEach(element => {
-      feedItemTemplate.img = element.uri;
-      console.warn(feedItemTemplate);
-      feedItemData.push(feedItemTemplate);
+    const feedItems = this.props.selfies.map((item, index) => {
+      return {
+        key: index + "",
+        timestamp: Date.now(),
+        rating: 5,
+        weatherTemp: 20,
+        img: item.uri
+      };
     });
+
+    // const feedItemTemplate = {
+    //   key: "Feed Item A",
+    //   timestamp: 1523226512,
+    //   rating: "5",
+    //   weatherTemp: 20,
+    //   img: "https://tinyurl.com/y9asfh7d"
+    // };
+    // let feedItemData = [];
+    // this.props.selfies.forEach(element => {
+    //   const feedItemTemplateCopy = Object.assign(feedItemTemplate, {});
+    //   feedItemTemplateCopy.img = element.uri;
+    //   console.warn(feedItemTemplate);
+    //   feedItemData.push(feedItemTemplate);
+    // });
+
     return (
       <View style={styles.feed}>
         <FlatList
-          data={feedItemData}
+          data={feedItems}
           renderItem={({ item }) => <FeedItem item={item} />}
         />
       </View>
